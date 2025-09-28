@@ -13,7 +13,8 @@
   <ItemGroup>
     <Folder Include="Order\Eventes\" />
     <Folder Include="Product\Repositories\" />
-    <Folder Include="Seller\Repositories\" />
+    <Folder Include="User\Repositories\" />
+    <Folder Include="WebSiteEntities\Enums\" />
   </ItemGroup>
 
 </Project>
