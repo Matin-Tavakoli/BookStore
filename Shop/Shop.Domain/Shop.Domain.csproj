@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <Folder Include="Order\Eventes\" />
+    <Folder Include="Product\Repositories\" />
+    <Folder Include="Seller\Repositories\" />
   </ItemGroup>
 
 </Project>
