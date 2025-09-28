@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Order\Entities\" />
     <Folder Include="Order\Eventes\" />
-    <Folder Include="Order\ValueObjects\" />
   </ItemGroup>
 
 </Project>
