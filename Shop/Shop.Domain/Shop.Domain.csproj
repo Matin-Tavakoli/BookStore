@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.Domain\Common.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Order\Entities\" />
+    <Folder Include="Order\Eventes\" />
+    <Folder Include="Order\ValueObjects\" />
+  </ItemGroup>
+
 </Project>
