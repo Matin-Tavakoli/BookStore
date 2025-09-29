@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Order\Eventes\" />
     <Folder Include="Product\Repositories\" />
     <Folder Include="User\Repositories\" />
     <Folder Include="WebSiteEntities\Enums\" />

@@ -7,46 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Comments\ChangeStatus\" />
-    <Folder Include="Comments\Create\" />
-    <Folder Include="Comments\Delete\" />
-    <Folder Include="Comments\Edit\" />
-    <Folder Include="_Utilities\" />
-    <Folder Include="Orders\AddItem\" />
-    <Folder Include="Orders\Checkout\" />
-    <Folder Include="Orders\DecreaseItemQuantity\" />
-    <Folder Include="Orders\Finalized\" />
-    <Folder Include="Orders\IncreaseItemQuantity\" />
-    <Folder Include="Orders\SendOrder\" />
-    <Folder Include="Orders\RemoveItem\" />
-    <Folder Include="Orders\_EventHandelers\" />
-    <Folder Include="Products\AddImage\" />
-    <Folder Include="Products\Create\" />
-    <Folder Include="Products\Edit\" />
-    <Folder Include="Products\RemoveImage\" />
-    <Folder Include="Roles\Create\" />
-    <Folder Include="Roles\Edit\" />
-    <Folder Include="Sellers\AddInventory\" />
-    <Folder Include="Sellers\Create\" />
-    <Folder Include="Sellers\Edit\" />
-    <Folder Include="Sellers\EditInventory\" />
-    <Folder Include="Users\AddAddress\" />
-    <Folder Include="Users\AddToken\" />
-    <Folder Include="Users\ChangePassword\" />
-    <Folder Include="Users\ChangeWallet\" />
-    <Folder Include="Users\Create\" />
-    <Folder Include="Users\DeleteAddress\" />
-    <Folder Include="Users\Edit\" />
-    <Folder Include="Users\EditAddress\" />
-    <Folder Include="Users\SetActiveAddress\" />
-    <Folder Include="Users\RemoveToken\" />
-    <Folder Include="Users\Register\" />
-    <Folder Include="WebSiteEntities\Banners\" />
-    <Folder Include="WebSiteEntities\Sliders\" />
-    <Folder Include="WebSiteEntities\ShippingMethods\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.Application\Common.Application.csproj" />
     <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj" />
   </ItemGroup>
