@@ -148,12 +148,24 @@ public class User : AggregateRoot
 
     public void Guard( string phoneNumber , string email, IUserDomainService userDomainService)
     {
-        NullOrEmptyDomainDataException.CheckString(email, nameof(email));
-        NullOrEmptyDomainDataException.CheckString(phoneNumber, nameof(phoneNumber));
-        if (!email.IsValidEmail())
+        if (!string.IsNullOrWhiteSpace(email))
         {
-            throw new InvalidDomainDataException("Email is not valid");
+            NullOrEmptyDomainDataException.CheckString(email, nameof(email));
+
+            if (!email.IsValidEmail())
+            {
+                throw new InvalidDomainDataException("Email is not valid");
+            }
+            if (email != Email)
+            {
+                if (userDomainService.IsEmailExist(email))
+                {
+                    throw new InvalidDomainDataException("Email is exist");
+                }
+            }
         }
+        NullOrEmptyDomainDataException.CheckString(phoneNumber, nameof(phoneNumber));
+        
 
         if (phoneNumber != PhoneNumber)
         {
@@ -163,12 +175,6 @@ public class User : AggregateRoot
             }
         }
 
-        if (email != Email)
-        {
-            if (userDomainService.IsEmailExist(email))
-            {
-                throw new InvalidDomainDataException("Email is exist");
-            }
-        }
+        
     }
 }
