@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Shop.Application\Shop.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistent.Dapper\TypeHandler\" />
+  </ItemGroup>
+
 </Project>

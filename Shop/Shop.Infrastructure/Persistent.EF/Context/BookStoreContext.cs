@@ -1,6 +1,10 @@
 ﻿using Common.Domain;
+using Common.Domain.ValueObjects;
+using Common.Domain.ValueObjects.Money;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Domain.Category.Entities;
 using Shop.Domain.Comment.Entities;
 using Shop.Domain.Order.Entities;
@@ -67,5 +71,18 @@ public class BookStoreContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(BookStoreContext).Assembly);
         base.OnModelCreating(modelBuilder);
+    }
+
+    protected override void ConfigureConventions(ModelConfigurationBuilder builder)
+    {
+       
+        builder.Properties<Toman>()
+            .HaveConversion<TomanConverter>()
+            .HavePrecision(18, 0)
+            .HaveColumnType("decimal(18,0)");
+
+        builder.Properties<PhoneNumber>()
+            .HaveConversion<PhoneNumberConverter>()
+            .HaveMaxLength(11);
     }
 }

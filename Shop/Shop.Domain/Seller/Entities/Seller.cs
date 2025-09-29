@@ -1,5 +1,6 @@
 ﻿using Common.Domain;
 using Common.Domain.Exceptions;
+using Common.Domain.ValueObjects.Money;
 using Shop.Domain.Seller.Enums;
 using Shop.Domain.Seller.Services;
 
@@ -57,7 +58,7 @@ public class Seller : AggregateRoot
         Inventories.Add(inventory);
     }
 
-    public void EditInventory(long inventoryId, int count, int price, int? discountPercentage)
+    public void EditInventory(long inventoryId, int count, Toman price, int? discountPercentage)
     {
         var currentInventory = Inventories.FirstOrDefault(f => f.Id == inventoryId);
         if (currentInventory == null)

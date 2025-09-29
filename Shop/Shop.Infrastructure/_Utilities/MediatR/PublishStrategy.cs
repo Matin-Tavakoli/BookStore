@@ -3,32 +3,32 @@
 public enum PublishStrategy
 {
     /// <summary>
-    /// Run each notification handler after one another. Returns when all handlers are finished. In case of any exception(s), they will be captured in an AggregateException.
+    /// Run each handler sequentially; continue on exceptions, aggregate at the end.
     /// </summary>
     SyncContinueOnException = 0,
 
     /// <summary>
-    /// Run each notification handler after one another. Returns when all handlers are finished or an exception has been thrown. In case of an exception, any handlers after that will not be run.
+    /// Run each handler sequentially; stop at first exception.
     /// </summary>
     SyncStopOnException = 1,
 
     /// <summary>
-    /// Run all notification handlers asynchronously. Returns when all handlers are finished. In case of any exception(s), they will be captured in an AggregateException.
+    /// Run handlers asynchronously (await all); aggregate exceptions.
     /// </summary>
     Async = 2,
 
     /// <summary>
-    /// Run each notification handler on it's own thread using Task.Run(). Returns immediately and does not wait for any handlers to finish. Note that you cannot capture any exceptions, even if you await the call to Publish.
+    /// Fire-and-forget: schedule each handler on ThreadPool and return immediately.
     /// </summary>
     ParallelNoWait = 3,
 
     /// <summary>
-    /// Run each notification handler on it's own thread using Task.Run(). Returns when all threads (handlers) are finished. In case of any exception(s), they are captured in an AggregateException by Task.WhenAll.
+    /// Run handlers on ThreadPool and await Task.WhenAll.
     /// </summary>
     ParallelWhenAll = 4,
 
     /// <summary>
-    /// Run each notification handler on it's own thread using Task.Run(). Returns when any thread (handler) is finished. Note that you cannot capture any exceptions (See msdn documentation of Task.WhenAny)
+    /// Run handlers on ThreadPool and await Task.WhenAny.
     /// </summary>
     ParallelWhenAny = 5,
 }

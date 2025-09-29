@@ -1,4 +1,7 @@
-﻿namespace Shop.Infrastructure._Utilities.MediatR;
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace Shop.Infrastructure._Utilities.MediatR;
 
 public interface ICustomPublisher
 {

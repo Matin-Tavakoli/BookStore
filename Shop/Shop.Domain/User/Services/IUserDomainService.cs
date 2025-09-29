@@ -2,6 +2,6 @@
 
 public interface IUserDomainService
 {
-    bool IsEmailExist(string Email);
-    bool IsPhoneNumberExist(string PhoneNumber);
+    bool IsEmailExist(string email);
+    bool IsPhoneNumberExist(string phoneNumber);
 }

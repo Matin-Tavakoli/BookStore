@@ -31,12 +31,12 @@ public class AddOrderItemCommandHandler : IBaseCommandHandler<AddOrderItemComman
         if (order == null)
         {
             order = new Order(request.UserId);
-            order.AddItem(new OrderItem(request.InventoryId, request.Count, new Toman(inventory.Price)));
+            order.AddItem(new OrderItem(request.InventoryId, request.Count, inventory.Price));
             _repository.Add(order);
         }
         else
         {
-            order.AddItem(new OrderItem(request.InventoryId, request.Count, new Toman(inventory.Price)));
+            order.AddItem(new OrderItem(request.InventoryId, request.Count,inventory.Price));
         }
 
 

@@ -75,12 +75,17 @@ namespace Shop.Infrastructure.Persistent.EF.User
                 option.Property(b => b.PostalCode)
                     .IsRequired().HasMaxLength(20);
 
-                option.OwnsOne(c => c.PhoneNumber, config =>
-                {
-                    config.Property(b => b.Value)
-                        .HasColumnName("PhoneNumber")
-                        .IsRequired().HasMaxLength(11);
-                });
+                option.Property(c => c.PhoneNumber)
+                    .HasColumnName("PhoneNumber")
+                    .IsRequired()
+                    .HasMaxLength(11);
+
+                //option.OwnsOne(c => c.PhoneNumber, config =>
+                //{
+                //    config.Property(b => b.Value)
+                //        .HasColumnName("PhoneNumber")
+                //        .IsRequired().HasMaxLength(11);
+                //});
             });
 
             builder.OwnsMany(b => b.Wallets, option =>
